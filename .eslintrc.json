@@ -1,0 +1,122 @@
+{
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+            // this loads <rootdir>/tsconfig.json to eslint
+        },
+        "react": {
+            "version": "detect"
+        }
+    },
+    "plugins": [
+        "prettier",
+        "sort-imports-es6-autofix",
+        "@typescript-eslint",
+        "unused-imports",
+        "import"
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "overrides": [
+        {
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "project": [
+                    "./tsconfig.json"
+                ]
+            },
+            "files": [
+                "*.js",
+                "*.ts",
+                "*.tsx"
+            ]
+        }
+    ],
+    "rules": {
+        "@typescript-eslint/ban-ts-ignore": 0,
+        "@typescript-eslint/camelcase": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/no-empty-function": 0,
+        "@typescript-eslint/no-empty-interface": 0,
+        "@typescript-eslint/no-shadow": [
+            "error",
+            {
+                "hoist": "all"
+            }
+        ],
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/no-unused-vars": 0,
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/return-await": [
+            "error",
+            "never"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-console": 0,
+        "no-debugger": "warn",
+        "no-empty-function": "error",
+        "no-labels": "error",
+        "no-multiple-empty-lines:": 0,
+        "no-case-declarations": 0,
+        "no-nested-ternary": "error",
+        "no-return-await": "off",
+        "no-duplicate-imports": "error",
+        "no-unneeded-ternary": [
+            "error",
+            {
+                "defaultAssignment": false
+            }
+        ],
+        "prefer-const": "warn",
+        "semi": 0,
+        "@typescript-eslint/member-delimiter-style": [
+            2,
+            {
+                "multiline": {
+                    "delimiter": "none",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
+        "sort-imports-es6-autofix/sort-imports-es6": [
+            1,
+            {
+                "ignoreCase": false,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": [
+                    "none",
+                    "all",
+                    "multiple",
+                    "single"
+                ]
+            }
+        ],
+        "prettier/prettier": "warn",
+        "unused-imports/no-unused-imports-ts": "warn",
+        "unused-imports/no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}
