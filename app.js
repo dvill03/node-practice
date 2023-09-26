@@ -21,6 +21,9 @@ const limiter = RateLimit({
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
+// Allow for 1st closest proxy -- Railway builds
+app.set('trust proxy', 1)
+
 app.use(limiter)
 app.use(compression())
 app.use(logger('dev'))
