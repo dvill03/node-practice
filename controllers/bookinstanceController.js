@@ -1,8 +1,7 @@
 import { body, validationResult } from 'express-validator'
 import asyncHandler from 'express-async-handler'
 
-import Book from '../models/book.js'
-import BookInstance from '../models/bookinstance.js'
+import { Book, BookInstance } from '../models/index.js'
 
 // Display list of all BookInstances.
 const bookinstance_list = asyncHandler(async (req, res) => {

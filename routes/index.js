@@ -1,10 +1,3 @@
-import express from 'express'
-var router = express.Router()
-
-/* GET home page. */
-router.get('/', function (req, res, _next) {
-	// res.render('index', { title: 'Express' })
-	res.redirect('/catalog')
-})
-
-export default router
+export { default as catalogRouter } from './catalog.js'
+export { default as homeRouter } from './home.js'
+export { default as usersRouter } from './users.js'

@@ -8,9 +8,7 @@ import path, { dirname } from 'path'
 import helmet from 'helmet'
 import RateLimit from 'express-rate-limit'
 
-import catalogRouter from './routes/catalog.js'
-import indexRouter from './routes/index.js'
-import usersRouter from './routes/users.js'
+import { catalogRouter, homeRouter, usersRouter } from './routes/index.js'
 
 const app = express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -34,7 +32,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
+app.use('/', homeRouter)
 app.use('/users', usersRouter)
 app.use('/catalog', catalogRouter)
 

@@ -1,10 +1,7 @@
 import { body, validationResult } from 'express-validator'
 import asyncHandler from 'express-async-handler'
 
-import Author from '../models/author.js'
-import Book from '../models/book.js'
-import BookInstance from '../models/bookinstance.js'
-import Genre from '../models/genre.js'
+import { Author, Book, BookInstance, Genre } from '../models/index.js'
 
 const index = asyncHandler(async (req, res) => {
 	// Get details of books, book instances, authors and genre counts (in parallel)

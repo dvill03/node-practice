@@ -1,8 +1,7 @@
 import { body, validationResult } from 'express-validator'
 import asyncHandler from 'express-async-handler'
 
-import Book from '../models/book.js'
-import Genre from '../models/genre.js'
+import { Book, Genre } from '../models/index.js'
 
 // Display list of all Genre.
 const genre_list = asyncHandler(async (req, res) => {

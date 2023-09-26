@@ -2,8 +2,7 @@ import { body, validationResult } from 'express-validator'
 import Debug from 'debug'
 import asyncHandler from 'express-async-handler'
 
-import Author from '../models/author.js'
-import Book from '../models/book.js'
+import { Author, Book } from '../models/index.js'
 
 const debug = Debug('author')
 
