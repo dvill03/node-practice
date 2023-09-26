@@ -21,11 +21,8 @@ const limiter = RateLimit({
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
-// Allow for reverse-proxy (1st closest proxy)
-app.set('trust proxy', 1)
-
 app.use(limiter)
-app.use(compression)
+app.use(compression())
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
